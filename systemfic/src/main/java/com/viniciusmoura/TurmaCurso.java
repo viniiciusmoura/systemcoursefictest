@@ -15,6 +15,7 @@ public class TurmaCurso {
     public LocalDate inicioMatriculas;
     public LocalDate fimMatriculas;
     public Curso curso;
+    public List<String> matriculas = new ArrayList<>();
 
     public List<LocalDate> getPeriodoMatriculas(){
         List<LocalDate> datasPeriodo = new ArrayList<>();
@@ -32,6 +33,7 @@ public class TurmaCurso {
             this.inicioAulas = inicioAulas;
             this.fimAulas = fimAulas;
             this.curso=curso;
+            
             if (inicioMatriculas.isBefore(inicioAulas)&&fimMatriculas.isBefore(inicioAulas)&&fimMatriculas.isAfter(inicioMatriculas)) {
                 this.inicioMatriculas = inicioMatriculas;
                 this.fimMatriculas = fimMatriculas;
@@ -44,6 +46,8 @@ public class TurmaCurso {
         }
         
     }
+  
+
 
     //Get vagas
     public int getVagasDisponiveis(){
@@ -75,8 +79,5 @@ public class TurmaCurso {
         return this.vagas;
     } 
 
-    
-    
-
-    
+       
 }

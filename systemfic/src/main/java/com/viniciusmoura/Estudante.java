@@ -8,6 +8,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 
 
@@ -26,7 +27,7 @@ public class Estudante {
             this.endereco = endereco;
             this.emailInstitucional = emailInstitucional;
             this.nCelulars.add(new Celular(tCelular));
-            this.matricula="2021APO";
+            this.matricula=gerarMatricula();
         }else{
             throw new IllegalArgumentException("Error: Existe algum atributo que está NULO ou VAZIO.");
         }
@@ -51,6 +52,11 @@ public class Estudante {
         }
     }
 
+    public String gerarMatricula(){
+        Random random = new Random();
+        return Integer.toString(random.nextInt(10)); 
+        
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -121,20 +127,6 @@ public class Estudante {
     public List<Celular> getnCelulars() {
         return nCelulars;
     }
-
-
-
-
-    
-    // public static void main(String[] args) throws Exception {
-    //     Estudante est = new Estudante("null", "06/12/2007", "nullj", "nullj", "nuljl");
-    // }
-
-    
-    
-
-
-
 
 
         
